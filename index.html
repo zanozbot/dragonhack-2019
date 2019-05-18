@@ -164,6 +164,21 @@
     <div class="content">
       <!-- Animated -->
       <div class="animated fadeIn">
+            <div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="scrollmodalLabel">Active devices</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="tooltip-for-daily-rate"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         <!-- Widgets  -->
         <div class="row">
           <div class="col-lg-4 col-md-6">
@@ -183,7 +198,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-4 col-md-6">
             <div class="card">
               <div class="card-body">
@@ -201,7 +215,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-4 col-md-6">
             <div class="card">
               <div class="card-body">
@@ -235,9 +248,7 @@
                   </div>
                 </div>
               </div> <!-- /.row -->
-              <div class="card-body">
-                <div id="tooltip-for-daily-rate"> </div>
-              </div>
+              <div class="card-body"></div>
             </div>
           </div><!-- /# column -->
           <div class="col-lg-6">
@@ -461,7 +472,9 @@
     jQuery(document).ready(function ($) {
       "use strict";
       var deviceDict ={
-        "1am": ["Tesla X", "nissan"]
+        "1am": ["tesla", "nissan"],
+        "2am": ["tesla", "nissan","scooter"],
+        "3am": ["scooter"]
         }
 
       var customTooltips = function(tooltip) {
@@ -471,8 +484,10 @@
 			if (tooltip.opacity === 0) {
 				tooltipEl.style.opacity = 0;
 				return;
-			}
+            }
+            
 			if (tooltip.title) {
+                $('#scrollmodal').modal('show');
                 var key = tooltip.title[0];
                 var devices = deviceDict[key];
                 var innerHtml = "<div class=\"table-stats order-table ov-h\"><table class=\"table \"><thead><tr><th class=\"serial\">#</th><th class=\"avatar\">Avatar</th><th>Name</th></thead><tbody>";
@@ -480,6 +495,12 @@
                     devices.forEach(function(device) {                      
                         switch(device){
                             case "nissan": innerHtml+="<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-car icon-mlg\"></i></div></td><td><span class=\"name\">NISSAN LEAF</span> </td></tr>"
+                            break;
+                            case "tesla": innerHtml+="<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-car icon-mlg\"></i></div></td><td><span class=\"name\">TESLA X</span> </td></tr>"
+                            break;
+                            case "scooter": innerHtml+="<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-bicycle icon-mlg\"></i></div></td><td><span class=\"name\">ELECTRIC SCOOTER</span> </td></tr>"
+                            break;
+                            case "wash": innerHtml+="<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-plug icon-mlg\"></i></div></td><td><span class=\"name\">BEKO WASHING MACHINE</span> </td></tr>"
                             break;
                         }
                     });
@@ -521,7 +542,7 @@
         },
         options: {
             responsive: true,
-            tooltipEvents: ["click"],
+            events: ["click"],
             tooltips: {
                 enabled: false,
                 mode: 'index',
