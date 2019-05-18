@@ -629,27 +629,24 @@ aside.left-panel {
       padding-left: 30px;
       padding-right: 30px; }
       .navbar .navbar-nav > li.active {
-        background: #00c2921b; }
+        background: #00c292; }
     .navbar .navbar-nav li {
       width: 100%; }
       .navbar .navbar-nav li.active .menu-icon, .navbar .navbar-nav li:hover .toggle_nav_button:before,
       .navbar .navbar-nav li .toggle_nav_button.nav-open:before {
-        color: #66bb6a; }
+        color: white; }
       .navbar .navbar-nav li .dropdown-toggle:after {
         display: none; }
       .navbar .navbar-nav li > a {
         background: none !important;
-        color: #66bb6a;
         display: inline-block;
         font-size: 14px;
         line-height: 26px;
         padding: 10px 0;
         position: relative;
         width: 100%; }
-        .navbar .navbar-nav li > a:hover, .navbar .navbar-nav li > a:hover .menu-icon {
-          color: #66bb6a; }
+
         .navbar .navbar-nav li > a .menu-icon {
-          color: #66bb6a;
           float: left;
           margin-top: 8px;
           width: 55px;
@@ -723,7 +720,7 @@ aside.left-panel {
 .navbar .navbar-nav > .active > a,
 .navbar .navbar-nav > .active > a:focus,
 .navbar .navbar-nav > .active > a:hover {
-  color: #66bb6a; }
+  color: white; }
 
 .navbar-nav li span.count {
   background: #a9d86e;
@@ -2537,6 +2534,10 @@ footer.site-footer {
 
 .li-item:hover {
   background: #00c29211;
+}
+
+a:hover, a:focus {
+  color: #7a7a7a;
 }
 
 /*# sourceMappingURL=style.css.map */
