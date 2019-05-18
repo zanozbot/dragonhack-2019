@@ -190,11 +190,56 @@
     <!-- Content -->
     <div>
       <div class="content col-lg-12">
-        <div class="buttons">
-          <button type="button" class="btn btn-warning bg-flat-color-4"><i class="fa fa-pause"></i>&nbsp; Pause</button>
-          <button type="button" class="btn bg-flat-color-7"><i class="fa fa-play"></i>&nbsp; Force
-            start</button>
-        </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                        <div class="stat-icon dib flat-color-1">
+                            <i class="pe-7s-cash"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="text-left dib">
+                            <div class="stat-text"><span>1.9€</span></div>
+                            <div class="stat-heading">Weekly savings</div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five">
+                        <div class="stat-icon dib flat-color-2">
+                            <i class="ti-bolt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="text-left dib">
+                            <div class="stat-text"><span>0.03812 €</span></div>
+                            <div class="stat-heading">Average kWh cost</div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-five buttons-widget">
+                        <div class="buttons">
+                            <button type="button" class="btn btn-warning"><i class="fa fa-pause"></i>&nbsp; Pause</button>
+                            <button type="button" class="btn btn-success"><i class="fa fa-play"></i>&nbsp; Force start</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
         <!-- Animated -->
         <div class="row">
           <div class="animated fadeIn col-lg-6">
@@ -319,7 +364,7 @@
               {
                 label: "Average consumption",
                 scaleLabel: "€",
-                data: [65, 59, 80, 81, 56, 55, 45],
+                data: [ 1.2, 0.8, 0.6, 1.5, 1.0, 1.1, 1.1 ],
                 borderColor: "rgba(251,150,120,0.9)",
                 borderWidth: "0",
                 backgroundColor: "rgba(251,150,120,0.5)"
@@ -327,14 +372,14 @@
               {
                 label: "Predicted consumption",
                 scaleLabel: "€",
-                data: [28, 48, 40, 19, 86, 27, 76],
+                data: [ 0.8, 0.5, 0.5, 1.0, 1.1, 0.9, 0.8 ],
                 borderColor: "rgba(3,169,243,0.9)",
                 borderWidth: "0",
                 backgroundColor: "rgba(3,169,243,0.5)"
               },
               {
                 label: "Actual consumption",
-                data: [28, 48, 40, 19, 86, 27, 76],
+                data: [ 0.9, 0.4, 0.4, 0.8, 1.0, 1.0, 0.9 ],
                 borderColor: "rgba(171, 140, 228, 0.9)",
                 borderWidth: "0",
                 backgroundColor: "rgba(171, 140, 228, 0.5)"
