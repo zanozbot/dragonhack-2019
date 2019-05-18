@@ -31,6 +31,10 @@ Googel Fonts  */
 .bg-flat-color-4 {
   background: #fb9678; }
 
+.bg-flat-color-4:hover {
+  background: #dd7758;
+}
+
 .bg-flat-color-5 {
   background: #66bb6a; }
 
@@ -625,27 +629,24 @@ aside.left-panel {
       padding-left: 30px;
       padding-right: 30px; }
       .navbar .navbar-nav > li.active {
-        background: #fafafa; }
+        background: #00c292; }
     .navbar .navbar-nav li {
       width: 100%; }
       .navbar .navbar-nav li.active .menu-icon, .navbar .navbar-nav li:hover .toggle_nav_button:before,
       .navbar .navbar-nav li .toggle_nav_button.nav-open:before {
-        color: #03a9f3; }
+        color: white; }
       .navbar .navbar-nav li .dropdown-toggle:after {
         display: none; }
       .navbar .navbar-nav li > a {
         background: none !important;
-        color: #607d8b;
         display: inline-block;
         font-size: 14px;
         line-height: 26px;
         padding: 10px 0;
         position: relative;
         width: 100%; }
-        .navbar .navbar-nav li > a:hover, .navbar .navbar-nav li > a:hover .menu-icon {
-          color: #03a9f3; }
+
         .navbar .navbar-nav li > a .menu-icon {
-          color: #607d8b;
           float: left;
           margin-top: 8px;
           width: 55px;
@@ -719,7 +720,7 @@ aside.left-panel {
 .navbar .navbar-nav > .active > a,
 .navbar .navbar-nav > .active > a:focus,
 .navbar .navbar-nav > .active > a:hover {
-  color: #03a9f3; }
+  color: white; }
 
 .navbar-nav li span.count {
   background: #a9d86e;
@@ -1596,8 +1597,6 @@ header .form-inline {
 .social-buttons .only-text p button {
   padding: 0 .5rem; }
 
-.buttons button {
-  margin: 2px 0; }
 
 /* Ribons */
 .corner-ribon {
@@ -2446,6 +2445,7 @@ footer.site-footer {
   aside.left-panel {
     overflow: scroll; }
 
+
   .right-panel header.header {
     height: 62px; }
   .right-panel .top-left, .right-panel .top-right {
@@ -2531,4 +2531,31 @@ footer.site-footer {
 .dropdown-item span {
   margin-right: 1rem;
 }
+
+.li-item:hover {
+  background: #00c29211;
+}
+
+a:hover, a:focus {
+  color: #7a7a7a;
+}
+
+.card-header {
+  background-color: #00c292;
+}
+
+.media-body p {
+  color: white;
+}
+
+.description-icon i {
+  color: #00c292;
+}
+
+.btns {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
 /*# sourceMappingURL=style.css.map */
