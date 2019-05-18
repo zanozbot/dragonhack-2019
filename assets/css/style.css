@@ -1004,7 +1004,7 @@ header .form-inline {
     padding-bottom: 0; }
     .header-left .dropdown .dropdown-toggle:after {
       display: none; }
-    .header-left .dropdown .dropdown-toggle .count {
+    .header-left .dropdown .dropdown-toggle .no-count {
       border-radius: 50%;
       color: #fff;
       font-size: 11px;
@@ -2521,5 +2521,14 @@ footer.site-footer {
 
 .orders .avatars i {
   font-size: 3rem;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-item span {
+  margin-right: 1rem;
 }
 /*# sourceMappingURL=style.css.map */
