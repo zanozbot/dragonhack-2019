@@ -2558,4 +2558,13 @@ a:hover, a:focus {
   margin-bottom: 2rem;
 }
 
+.badge {
+  min-width: 60px;
+}
+
+.clickable-row:hover {
+  cursor: pointer;
+  background-color: #00c29211;
+}
+
 /*# sourceMappingURL=style.css.map */
