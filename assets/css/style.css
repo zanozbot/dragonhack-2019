@@ -1596,8 +1596,6 @@ header .form-inline {
 .social-buttons .only-text p button {
   padding: 0 .5rem; }
 
-.buttons button {
-  margin: 2px 0; }
 
 /* Ribons */
 .corner-ribon {
@@ -2445,6 +2443,7 @@ footer.site-footer {
 
   aside.left-panel {
     overflow: scroll; }
+
 
   .right-panel header.header {
     height: 62px; }
