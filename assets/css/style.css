@@ -2540,4 +2540,16 @@ a:hover, a:focus {
   color: #7a7a7a;
 }
 
+.card-header {
+  background-color: #00c292;
+}
+
+.media-body p {
+  color: white;
+}
+
+.description-icon i {
+  color: #00c292;
+}
+
 /*# sourceMappingURL=style.css.map */
