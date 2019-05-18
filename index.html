@@ -241,20 +241,20 @@
             </div>
           </div><!-- /# column -->
           <div class="col-lg-6">
-                <div class="card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="box-title">Predicted rate</h4>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
                   <div class="card-body">
-                    <h4 class="box-title">Predicted rate</h4>
+                    <canvas id="lineChart2"></canvas>
                   </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="card-body">
-                        <canvas id="lineChart2"></canvas>
-                      </div>
-                    </div>
-                  </div> <!-- /.row -->
-                  <div class="card-body"></div>
                 </div>
-              </div><!-- /# column -->
+              </div> <!-- /.row -->
+              <div class="card-body"></div>
+            </div>
+          </div><!-- /# column -->
         </div>
         <!--  /Traffic -->
         <div class="clearfix"></div>
@@ -460,134 +460,134 @@
   <script>
     jQuery(document).ready(function ($) {
       "use strict";
-      var deviceDict ={
+      var deviceDict = {
         "1am": ["Tesla X", "nissan"]
+      }
+
+      var customTooltips = function (tooltip) {
+        // Tooltip Element
+        var tooltipEl = document.getElementById('tooltip-for-daily-rate');
+        // Hide if no tooltip
+        if (tooltip.opacity === 0) {
+          tooltipEl.style.opacity = 0;
+          return;
         }
+        if (tooltip.title) {
+          var key = tooltip.title[0];
+          var devices = deviceDict[key];
+          var innerHtml = "<div class=\"table-stats order-table ov-h\"><table class=\"table \"><thead><tr><th class=\"serial\">#</th><th class=\"avatar\">Avatar</th><th>Name</th></thead><tbody>";
+          if (devices) {
+            devices.forEach(function (device) {
+              switch (device) {
+                case "nissan": innerHtml += "<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-car icon-mlg\"></i></div></td><td><span class=\"name\">NISSAN LEAF</span> </td></tr>"
+                  break;
+              }
+            });
+          }
+          innerHtml += '</tbody></table></div>';
+          tooltipEl.innerHTML = innerHtml;
+        }
+        //var position = this._chart.canvas.getBoundingClientRect();
+        // Display, position, and set styles for font
+        tooltipEl.style.opacity = 1;
+      };
+      var ctx = document.getElementById("lineChart");
+      ctx.height = 150;
 
-      var customTooltips = function(tooltip) {
-			// Tooltip Element
-            var tooltipEl = document.getElementById('tooltip-for-daily-rate');
-			// Hide if no tooltip
-			if (tooltip.opacity === 0) {
-				tooltipEl.style.opacity = 0;
-				return;
-			}
-			if (tooltip.title) {
-                var key = tooltip.title[0];
-                var devices = deviceDict[key];
-                var innerHtml = "<div class=\"table-stats order-table ov-h\"><table class=\"table \"><thead><tr><th class=\"serial\">#</th><th class=\"avatar\">Avatar</th><th>Name</th></thead><tbody>";
-                if(devices) {
-                    devices.forEach(function(device) {                      
-                        switch(device){
-                            case "nissan": innerHtml+="<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-car icon-mlg\"></i></div></td><td><span class=\"name\">NISSAN LEAF</span> </td></tr>"
-                            break;
-                        }
-                    });
-                }
-                innerHtml += '</tbody></table></div>';
-                    tooltipEl.innerHTML = innerHtml;
-			}
-			//var position = this._chart.canvas.getBoundingClientRect();
-			// Display, position, and set styles for font
-			tooltipEl.style.opacity = 1;
-		};
-    var ctx = document.getElementById( "lineChart" );
-    ctx.height = 150;
-
-    var myChart = new Chart( ctx, {
+      var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm', '12pm'],
-            datasets: [
-                {
-                    steppedLine: 'middle',
-                    label: "Rate",
-                    borderColor: "rgba(0,0,0,.29)",
-                    borderWidth: "1",
-                    backgroundColor: "rgba(0,0,0,.07)",
-                    data: [35.96, 29.74, 29.37, 29.41, 30.43, 35.73, 46.16, 53.01, 43.26, 40.00, 36.70, 34.70, 32.74, 31.33, 30.98, 32.06, 36.05, 43.60, 48.95, 48.96, 47.61, 46.88, 41.26, 39.12, 38.45],
-                            },
-                {
-                    steppedLine: 'middle',
-                    label: "Optimal Rate",
-                    borderColor: "rgba(0, 194, 146, 0.9)",
-                    borderWidth: "1",
-                    backgroundColor: "rgba(0, 194, 146, 0.5)",
-                    pointHighlightStroke: "rgba(26,179,148,1)",
-                    data: [NaN, 29.74, 29.37, 29.41, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, 32.74, 31.33, 30.98, NaN]
-                            }
-                        ]
-           
-        },
-        options: {
-            responsive: true,
-            tooltipEvents: ["click"],
-            tooltips: {
-                enabled: false,
-                mode: 'index',
-                position: 'nearest',
-                custom: customTooltips
+          labels: ['1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm', '12pm'],
+          datasets: [
+            {
+              steppedLine: 'middle',
+              label: "Rate",
+              borderColor: "rgba(0,0,0,.29)",
+              borderWidth: "1",
+              backgroundColor: "rgba(0,0,0,.07)",
+              data: [35.96, 29.74, 29.37, 29.41, 30.43, 35.73, 46.16, 53.01, 43.26, 40.00, 36.70, 34.70, 32.74, 31.33, 30.98, 32.06, 36.05, 43.60, 48.95, 48.96, 47.61, 46.88, 41.26, 39.12, 38.45],
             },
-        }
-    } );
-    var ctx = document.getElementById( "lineChart2" );
-    ctx.height = 150;
-    var myChart = new Chart( ctx, {
-        type: 'line',
-        data: {
-            labels: ['1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm', '12pm'],
-            datasets: [
-                {
-                    borderDash: [5,3],
-                    steppedLine: 'middle',
-                    label: "Predicted rate",
-                    borderColor: "rgba(0,0,0,.29)",
-                    borderWidth: "1",
-                    backgroundColor: "rgba(0,0,0,.07)",
-                    data: [35.96, 29.74, 29.37, 29.41, 30.43, 35.73, 46.16, 53.01, 43.26, 40.00, 36.70, 34.70, 32.74, 31.33, 30.98, 32.06, 36.05, 43.60, 48.95, 48.96, 47.61, 46.88, 41.26, 39.12, 38.45],
-                            },
-                {
-                    borderDash: [10,5],
-                    steppedLine: 'middle',
-                    label: "Predicted optimal rate",
-                    borderColor: "rgba(0, 146, 194, 0.9)",
-                    borderWidth: "1",
-                    backgroundColor: "rgba(0, 146, 194, 0.5)",
-                    pointHighlightStroke: "rgba(26,179,148,1)",
-                    data: [0, 29.74, 29.37, 29.41, 0, 0, 0, 0, 0, 0, 0, 0, 32.74, 31.33, 30.98, 0]
-                            }
-                            
-                        ]
-           
-        },
-        options: {
-            responsive: true,
-            tooltips: {
-                mode: 'index',
-                intersect: false
-            },
-            hover: {
-                mode: 'nearest',
-                intersect: true
+            {
+              steppedLine: 'middle',
+              label: "Optimal Rate",
+              borderColor: "rgba(0, 194, 146, 0.9)",
+              borderWidth: "1",
+              backgroundColor: "rgba(0, 194, 146, 0.5)",
+              pointHighlightStroke: "rgba(26,179,148,1)",
+              data: [NaN, 29.74, 29.37, 29.41, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, 32.74, 31.33, 30.98, NaN]
             }
+          ]
+
+        },
+        options: {
+          responsive: true,
+          events: ['click'],
+          tooltips: {
+            mode: 'index',
+            position: 'nearest',
+            custom: customTooltips
+          },
         }
-    } );
+      });
+
+      var ctx = document.getElementById("lineChart2");
+      ctx.height = 150;
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm', '12pm'],
+          datasets: [
+            {
+              borderDash: [5, 3],
+              steppedLine: 'middle',
+              label: "Predicted rate",
+              borderColor: "rgba(0,0,0,.29)",
+              borderWidth: "1",
+              backgroundColor: "rgba(0,0,0,.07)",
+              data: [35.96, 29.74, 29.37, 29.41, 30.43, 35.73, 46.16, 53.01, 43.26, 40.00, 36.70, 34.70, 32.74, 31.33, 30.98, 32.06, 36.05, 43.60, 48.95, 48.96, 47.61, 46.88, 41.26, 39.12, 38.45],
+            },
+            {
+              borderDash: [10, 5],
+              steppedLine: 'middle',
+              label: "Predicted optimal Rate",
+              borderColor: "rgba(0, 146, 194, 0.9)",
+              borderWidth: "1",
+              backgroundColor: "rgba(0, 146, 194, 0.5)",
+              pointHighlightStroke: "rgba(26,179,148,1)",
+              data: [0, 29.74, 29.37, 29.41, 0, 0, 0, 0, 0, 0, 0, 0, 32.74, 31.33, 30.98, 0]
+            }
+
+          ]
+
+        },
+        options: {
+          responsive: true,
+          tooltips: {
+            mode: 'index',
+            intersect: false
+          },
+          hover: {
+            mode: 'nearest',
+            intersect: true
+          }
+        }
+      });
 
 
-        // chart.on('draw', function(data) {
-        //     if(data.type === 'line' || data.type === 'area') {
-        //         data.element.animate({
-        //             d: {
-        //                 begin: 2000 * data.index,
-        //                 dur: 2000,
-        //                 from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-        //                 to: data.path.clone().stringify(),
-        //                 easing: Chartist.Svg.Easing.easeOutQuint
-        //             }
-        //         });
-        //     }
-        // });
-      
+      // chart.on('draw', function(data) {
+      //     if(data.type === 'line' || data.type === 'area') {
+      //         data.element.animate({
+      //             d: {
+      //                 begin: 2000 * data.index,
+      //                 dur: 2000,
+      //                 from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+      //                 to: data.path.clone().stringify(),
+      //                 easing: Chartist.Svg.Easing.easeOutQuint
+      //             }
+      //         });
+      //     }
+      // });
+
       // Traffic Chart using chartist End
       // Bar Chart #flotBarChart
       $.plot("#flotBarChart", [{
