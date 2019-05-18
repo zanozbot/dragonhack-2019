@@ -2552,4 +2552,10 @@ a:hover, a:focus {
   color: #00c292;
 }
 
+.btns {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
 /*# sourceMappingURL=style.css.map */
