@@ -304,7 +304,7 @@
                           <td>11h</td>
                           <td>4h</td>
                           <td>
-                            <span class="badge badge-complete">Usage</span>
+                            <span class="badge badge-complete">Consuming</span>
                           </td>
                         </tr>
                         <tr class='clickable-row' data-href="devices/solar-edge.html">
@@ -320,7 +320,7 @@
                           <td>-</td>
                           <td>-</td>
                           <td>
-                            <span class="badge badge-complete">Usage</span>
+                            <span class="badge badge-complete">Producing</span>
                           </td>
                         </tr>
                         <tr class='clickable-row' data-href="devices.html">
@@ -365,7 +365,7 @@
                           <td>1.45h</td>
                           <td>1.45h</td>
                           <td>
-                            <span class="badge badge-complete">Usage</span>
+                            <span class="badge badge-complete">Consuming</span>
                           </td>
                         </tr>
                       </tbody>
@@ -483,26 +483,26 @@
       var deviceDict = {
         "1am": ["tesla", "nissan"],
         "2am": ["tesla", "nissan", "scooter"],
-		"3am": ["tesla", "nissan", "scooter"],
-		"4am": ["tesla", "nissan", "scooter"],
-		"5am": ["tesla", "nissan"],
-		"2pm": ["wash"],
-		"3pm": ["wash"],
+        "3am": ["tesla", "nissan", "scooter"],
+        "4am": ["tesla", "nissan", "scooter"],
+        "5am": ["tesla", "nissan"],
+        "2pm": ["wash"],
+        "3pm": ["wash"],
       }
 
       var customTooltips = function (tooltip) {
         var tooltipEl = document.getElementById('tooltip-for-daily-rate');
-		
+
         if (tooltip.title) {
-		  var key = tooltip.title[0];
-		  if(!(key in deviceDict)){
-			return;
-		  }
+          var key = tooltip.title[0];
+          if (!(key in deviceDict)) {
+            return;
+          }
           $('#scrollmodal').modal('show');
-          
+
 
           var devices = deviceDict[key];
-		  var innerHtml = "<div class=\"table-stats order-table ov-h\"><table class=\"table \"><thead><tr><th class=\"serial\">#</th><th class=\"avatar\">Avatar</th><th>Name</th></thead><tbody>";
+          var innerHtml = "<div class=\"table-stats order-table ov-h\"><table class=\"table \"><thead><tr><th class=\"serial\">#</th><th class=\"avatar\">Avatar</th><th>Name</th></thead><tbody>";
           if (devices) {
             devices.forEach(function (device) {
               switch (device) {
@@ -525,18 +525,18 @@
       var ctx = document.getElementById("lineChart");
       ctx.height = 150;
 
-	  function shiftData(array){
-		var today = new Date();
-		var time = today.getHours();
-				console.log(time);
-		for(var i=0;i <time;i++){
-			var temp=array.shift();
-			array.push(temp);
-		}
-		console.log(array);
-		return array;
-	  }
-	  
+      function shiftData(array) {
+        var today = new Date();
+        var time = today.getHours();
+        console.log(time);
+        for (var i = 0; i < time; i++) {
+          var temp = array.shift();
+          array.push(temp);
+        }
+        console.log(array);
+        return array;
+      }
+
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -548,7 +548,7 @@
               borderColor: "rgba(0,0,0,.29)",
               borderWidth: "1",
               backgroundColor: "rgba(0,0,0,.07)",
-              
+
               data: shiftData([35.96, 29.74, NaN, NaN, 30.43, 35.73, 46.16, 53.01, 43.26, 40.00, 36.70, 34.70, 32.74, NaN, NaN, 32.06, 36.05, 43.60, 48.95, 48.96, 47.61, 46.88, 41.26, 39.12]),
             },
             {
@@ -558,7 +558,7 @@
               borderWidth: "1",
               backgroundColor: "rgba(0, 194, 146, 0.5)",
               pointHighlightStroke: "rgba(26,179,148,1)",
-              data: shiftData([NaN, 29.74, 29.37, 29.41, 30.43, NaN, NaN, NaN, NaN, NaN, NaN, NaN, 32.74, 31.33, 30.98, 32.06,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN])
+              data: shiftData([NaN, 29.74, 29.37, 29.41, 30.43, NaN, NaN, NaN, NaN, NaN, NaN, NaN, 32.74, 31.33, 30.98, 32.06, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN])
             }
           ]
 
@@ -589,7 +589,7 @@
               borderColor: "rgba(0,0,0,.29)",
               borderWidth: "1",
               backgroundColor: "rgba(0,0,0,.07)",
-              data: shiftData([39.66, 36.02, 35.00, 34.03, 32.63, 32.37, 33.37, 34.04, 35.07, 35.02, 34.08,34.10,33.80,29.64,27.41,27.49,30.25,34.47,38.28,42.28,42.34,41.71,43.33, 38.94]),
+              data: shiftData([39.66, 36.02, 35.00, 34.03, 32.63, 32.37, 33.37, 34.04, 35.07, 35.02, 34.08, 34.10, 33.80, 29.64, 27.41, 27.49, 30.25, 34.47, 38.28, 42.28, 42.34, 41.71, 43.33, 38.94]),
             },
             {
               borderDash: [10, 5],
@@ -599,7 +599,7 @@
               borderWidth: "1",
               backgroundColor: "rgba(0, 146, 194, 0.5)",
               pointHighlightStroke: "rgba(26,179,148,1)",
-              data: shiftData([NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN,NaN,NaN,29.64,27.41,27.49,30.25,NaN,NaN,NaN,NaN,NaN,NaN, NaN])
+              data: shiftData([NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, 29.64, 27.41, 27.49, 30.25, NaN, NaN, NaN, NaN, NaN, NaN, NaN])
             }
 
           ]
