@@ -38,6 +38,7 @@ Googel Fonts  */
 
 .bg-flat-color-1:hover, .bg-flat-color-1:active {
   background: #00a37a;
+  color: white;
   background-color: #00a37a !important;
 }
 
