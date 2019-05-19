@@ -2591,6 +2591,7 @@ a:hover, a:focus {
 
 .buttons {
   width: 100%;
+  align-items: center;
 }
 
 .buttons .spacer {
@@ -2604,6 +2605,7 @@ a:hover, a:focus {
   padding: 0 1rem;
   color: white;
   border-radius: 3px;
+  height: 2rem;
 }
 
 .buttons .device-status.pc {

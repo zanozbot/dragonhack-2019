@@ -189,11 +189,12 @@
       <div class="content col-lg-12">
         <div class="row btns">
           <div class="buttons">
-            <div class="device-status pc">Consuming</div>
+            <div id="device-status" class="device-status pc">Consuming</div>
             <div class="spacer"></div>
-            <button type="button" class="btn btn-warning bg-flat-color-4"><i class="fa fa-pause"></i>&nbsp;
+            <button id="btn-pause" type="button" class="btn btn-warning bg-flat-color-4"><i
+                class="fa fa-pause"></i>&nbsp;
               Pause</button>
-            <button type="button" class="btn bg-flat-color-7"><i class="fa fa-play"></i>&nbsp; Force
+            <button id="btn-play" type="button" class="btn bg-flat-color-7"><i class="fa fa-play"></i>&nbsp; Force
               start</button>
           </div>
         </div>
@@ -337,6 +338,33 @@
     <script>
       jQuery(document).ready(function ($) {
         "use strict";
+
+        $("#btn-pause").click(function () {
+          $(this).removeClass('bg-flat-color-4');
+          $(this).removeClass('btn-warning');
+          $(this).addClass('bg-flat-color-7');
+
+          $("#btn-play").removeClass('bg-flat-color-7');
+          $("#btn-play").addClass('bg-flat-color-1');
+
+          $("#device-status").addClass('idl');
+          $("#device-status").removeClass('pc');
+          $("#device-status").text('Idle');
+        })
+
+        $("#btn-play").click(function () {
+          $("#btn-pause").addClass('bg-flat-color-4');
+          $("#btn-pause").addClass('btn-warning');
+          $("#btn-pause").removeClass('bg-flat-color-7');
+
+          $(this).addClass('bg-flat-color-7');
+          $(this).removeClass('bg-flat-color-1');
+
+          $("#device-status").addClass('pc');
+          $("#device-status").removeClass('idl');
+          $("#device-status").text('Consuming');
+        })
+
         //bar chart
         var ctx = document.getElementById("barChart");
         ctx.height = 162;
