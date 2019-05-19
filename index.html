@@ -25,12 +25,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
   <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-  <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
-
-  <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
 
   <style>
     #weatherWidget .currentDesc {
@@ -91,16 +86,16 @@
           </li>
           <li class="menu-title">Devices</li><!-- /.menu-title -->
           <li class="li-item">
-            <a href="devices.html"><i class="menu-icon pe-7s-car"></i>NISSAN LEAF </a>
+            <a href="devices/nissan-leaf.html"><i class="menu-icon pe-7s-car"></i>NISSAN LEAF </a>
           </li>
           <li class="li-item">
-            <a href="#"><i class="menu-icon pe-7s-car"></i>TESLA X </a>
+            <a href="devices/tesla-x.html"><i class="menu-icon pe-7s-car"></i>TESLA X </a>
           </li>
           <li class="li-item">
-            <a href="#"><i class="menu-icon pe-7s-bicycle"></i>ELECTRIC SCOOTER </a>
+            <a href="devices/electric-scooter.html"><i class="menu-icon pe-7s-bicycle"></i>ELECTRIC SCOOTER </a>
           </li>
           <li class="li-item">
-            <a href="#"><i class="menu-icon pe-7s-plug"></i>BEKO WASHING MA... </a>
+            <a href="devices/beko-washing-machine.html"><i class="menu-icon pe-7s-plug"></i>BEKO WASHING MA... </a>
           </li>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -164,21 +159,22 @@
     <div class="content">
       <!-- Animated -->
       <div class="animated fadeIn">
-            <div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="scrollmodalLabel">Active devices</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div id="tooltip-for-daily-rate"> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="modal fade" id="scrollmodal" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="scrollmodalLabel">Active devices</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div id="tooltip-for-daily-rate"> </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Widgets  -->
         <div class="row">
           <div class="col-lg-4 col-md-6">
@@ -292,7 +288,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class='clickable-row' data-href="devices.html">
+                        <tr class='clickable-row' data-href="devices/nissan-leaf.html">
                           <td class="serial">1.</td>
                           <td class="avatar">
                             <div class="stat-icon dib flat-color-1">
@@ -308,7 +304,7 @@
                             <span class="badge badge-complete">Usage</span>
                           </td>
                         </tr>
-                        <tr class='clickable-row' data-href="devices.html">
+                        <tr class='clickable-row' data-href="devices/tesla-x.html">
                           <td class="serial">2.</td>
                           <td class="avatar">
                             <div class="stat-icon dib flat-color-1">
@@ -323,7 +319,7 @@
                             <span class="badge badge-pending">Idle</span>
                           </td>
                         </tr>
-                        <tr class='clickable-row' data-href="devices.html">
+                        <tr class='clickable-row' data-href="devices/electric-scooter.html">
                           <td class="serial">3.</td>
                           <td class="avatar">
                             <div class="stat-icon dib flat-color-1">
@@ -338,7 +334,7 @@
                             <span class="badge badge-pending">Idle</span>
                           </td>
                         </tr>
-                        <tr class='clickable-row' data-href="devices.html">
+                        <tr class='clickable-row' data-href="devices/beko-washing-machine.html">
                           <td class="serial">4.</td>
                           <td class="avatar">
                             <div class="stat-icon dib flat-color-1">
@@ -447,64 +443,58 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
   <script src="assets/js/main.js"></script>
-  <script src="devices.js"></script>
 
   <!--  Chart js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
 
-  <!--Chartist Chart-->
-  <script src="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartist-plugin-legend@0.6.2/chartist-plugin-legend.min.js"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flot-pie@1.0.0/src/jquery.flot.pie.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/simpleweather@3.1.0/jquery.simpleWeather.min.js"></script>
-  <script src="assets/js/init/weather-init.js"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
-  <script src="assets/js/init/fullcalendar-init.js"></script>
 
   <!--Local Stuff-->
   <script>
     jQuery(document).ready(function ($) {
       "use strict";
-      var deviceDict ={
-        "1am": ["tesla", "nissan"],
-        "2am": ["tesla", "nissan","scooter"],
-        "3am": ["scooter"]
-        }
 
-      var customTooltips = function(tooltip) {
-      var tooltipEl = document.getElementById('tooltip-for-daily-rate');
-            
-			if (tooltip.title) {
-                $('#scrollmodal').modal('show');
-                var key = tooltip.title[0];
-                var devices = deviceDict[key];
-                var innerHtml = "<div class=\"table-stats order-table ov-h\"><table class=\"table \"><thead><tr><th class=\"serial\">#</th><th class=\"avatar\">Avatar</th><th>Name</th></thead><tbody>";
-                if(devices) {
-                    devices.forEach(function(device) {                      
-                        switch(device){
-                            case "nissan": innerHtml+="<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-car icon-mlg\"></i></div></td><td><span class=\"name\">NISSAN LEAF</span> </td></tr>"
-                            break;
-                            case "tesla": innerHtml+="<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-car icon-mlg\"></i></div></td><td><span class=\"name\">TESLA X</span> </td></tr>"
-                            break;
-                            case "scooter": innerHtml+="<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-bicycle icon-mlg\"></i></div></td><td><span class=\"name\">ELECTRIC SCOOTER</span> </td></tr>"
-                            break;
-                            case "wash": innerHtml+="<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-plug icon-mlg\"></i></div></td><td><span class=\"name\">BEKO WASHING MACHINE</span> </td></tr>"
-                            break;
-                        }
-                    });
-                }
-                innerHtml += '</tbody></table></div>';
-                    tooltipEl.innerHTML = innerHtml;
-			}
-			//var position = this._chart.canvas.getBoundingClientRect();
-    };
-    var ctx = document.getElementById("lineChart");
+      $(".clickable-row").click(function () {
+        window.location = $(this).data("href");
+      });
+
+      var deviceDict = {
+        "1am": ["tesla", "nissan"],
+        "2am": ["tesla", "nissan", "scooter"],
+        "3am": ["scooter"]
+      }
+
+      var customTooltips = function (tooltip) {
+        var tooltipEl = document.getElementById('tooltip-for-daily-rate');
+
+        if (tooltip.title) {
+          $('#scrollmodal').modal('show');
+          var key = tooltip.title[0];
+          var devices = deviceDict[key];
+          var innerHtml = "<div class=\"table-stats order-table ov-h\"><table class=\"table \"><thead><tr><th class=\"serial\">#</th><th class=\"avatar\">Avatar</th><th>Name</th></thead><tbody>";
+          if (devices) {
+            devices.forEach(function (device) {
+              switch (device) {
+                case "nissan": innerHtml += "<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-car icon-mlg\"></i></div></td><td><span class=\"name\">NISSAN LEAF</span> </td></tr>"
+                  break;
+                case "tesla": innerHtml += "<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-car icon-mlg\"></i></div></td><td><span class=\"name\">TESLA X</span> </td></tr>"
+                  break;
+                case "scooter": innerHtml += "<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-bicycle icon-mlg\"></i></div></td><td><span class=\"name\">ELECTRIC SCOOTER</span> </td></tr>"
+                  break;
+                case "wash": innerHtml += "<tr><td class=\"serial\">1.</td><td class=\"avatar\"><div class=\"stat-icon dib flat-color-3\"><i class=\"pe-7s-plug icon-mlg\"></i></div></td><td><span class=\"name\">BEKO WASHING MACHINE</span> </td></tr>"
+                  break;
+              }
+            });
+          }
+          innerHtml += '</tbody></table></div>';
+          tooltipEl.innerHTML = innerHtml;
+        }
+        //var position = this._chart.canvas.getBoundingClientRect();
+      };
+      var ctx = document.getElementById("lineChart");
       ctx.height = 150;
 
       var myChart = new Chart(ctx, {
@@ -533,15 +523,15 @@
 
         },
         options: {
-            responsive: true,
-            events: ["click"],
-            tooltips: {
-                enabled: false,
-                mode: 'index',
-                position: 'nearest',
-                custom: customTooltips
-            },
-		}
+          responsive: true,
+          events: ["click"],
+          tooltips: {
+            enabled: false,
+            mode: 'index',
+            position: 'nearest',
+            custom: customTooltips
+          },
+        }
       });
 
       var ctx = document.getElementById("lineChart2");

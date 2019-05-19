@@ -22,6 +22,14 @@ Googel Fonts  */
 .bg-flat-color-1 {
   background: #00c292; }
 
+.bg-flat-color-1 {
+  color: white;
+}
+
+.bg-flat-color-1:hover {
+  background: #00a37a;
+}
+
 .bg-flat-color-2 {
   background: #ab8ce4; }
 
