@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>GreenGO - Electric Scooter</title>
+  <title>GreenGO - Solar edge</title>
   <meta name="description" content="GreenGO - Charge smart and save money">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -167,7 +167,7 @@
           <div class="col-sm-4">
             <div class="page-header float-left">
               <div class="page-title">
-                <h1>Electric Scooter</h1>
+                <h1>Solar Edge</h1>
               </div>
             </div>
           </div>
@@ -176,7 +176,7 @@
               <div class="page-title">
                 <ol class="breadcrumb text-right">
                   <li>Devices</li>
-                  <li class="active">Eletric Scooter</li>
+                  <li class="active">Solar Edge</li>
                 </ol>
               </div>
             </div>
@@ -189,9 +189,9 @@
       <div class="content col-lg-12">
         <div class="row btns">
           <div class="buttons">
-            <button type="button" class="btn bg-flat-color-7"><i class="fa fa-pause"></i>&nbsp;
+            <button type="button" class="btn btn-warning bg-flat-color-4"><i class="fa fa-pause"></i>&nbsp;
               Pause</button>
-            <button type="button" class="btn bg-flat-color-1"><i class="fa fa-play"></i>&nbsp; Force
+            <button type="button" class="btn bg-flat-color-7"><i class="fa fa-play"></i>&nbsp; Force
               start</button>
           </div>
         </div>
@@ -239,10 +239,10 @@
               <section class="card">
                 <div class="card-header user-header alt">
                   <div class="media">
-                    <i class="pe-7s-bicycle icon-mlg"></i>
+                    <i class="pe-7s-plug icon-mlg"></i>
                     <div class="media-body">
-                      <h2 class="text-light display-6">Electric Scooter</h2>
-                      <p>Electric scooter</p>
+                      <h2 class="text-light display-6">Solar Edge</h2>
+                      <p>Solar Edge</p>
                     </div>
                   </div>
                 </div>
@@ -251,27 +251,27 @@
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">
                     <div class="description-icon"><i class="fa fa-info-circle"></i> Description</div>
-                    <p>Light weight and portable transportation.</p>
+                    <p>Clean, limitless, free energy.</p>
                   </li>
                   <li class="list-group-item">
                     <div class="description-icon"><i class="fa fa-crosshairs"></i> Threshold</div>
-                    <p>50% Charged</p>
+                    <p>-</p>
                   </li>
                   <li class="list-group-item">
                     <div class="description-icon"><i class="fa fa-clock-o"></i> Threshold By</div>
-                    <p>8am</p>
+                    <p>-</p>
                   </li>
                   <li class="list-group-item">
                     <div class="description-icon"><i class="fa fa-dot-circle-o"></i> Current state</div>
-                    <p>56% (Dile)</p>
+                    <p>2,172 kWh</p>
                   </li>
                   <li class="list-group-item">
                     <div class="description-icon"><i class="fa fa-clock-o"></i> Expected time to completion</div>
-                    <p>3.5h</p>
+                    <p>-</p>
                   </li>
                   <li class="list-group-item">
                     <div class="description-icon"><i class="fa fa-clock-o"></i> Minimal needed time to completion</div>
-                    <p>2h</p>
+                    <p>-</p>
                   </li>
                 </ul>
 
@@ -287,7 +287,7 @@
                     <i class="ti-bolt icon-mlg"></i>
 
                     <div class="media-body">
-                      <h2 class="text-light display-6">Energy cost</h2>
+                      <h2 class="text-light display-6">Energy supply</h2>
                       <p>13 - 20. May 2019</p>
                     </div>
                   </div>
@@ -343,27 +343,20 @@
             labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
             datasets: [
               {
-                label: "Average cost",
+                label: "Predicted supply",
                 scaleLabel: "€",
-                data: [0.3, 0.4, 0.2, 0.6, 0.1, 0.2, 0.3],
-                borderColor: "rgba(251,150,120,0.9)",
-                borderWidth: "0",
-                backgroundColor: "rgba(251,150,120,0.5)"
-              },
-              {
-                label: "Predicted cost",
-                scaleLabel: "€",
-                data: [0.25, 0.2, 0.1, 0.5, 0.05, 0.1, 0.2],
+                data: [0.5, 0.1, 0.15, 0.3, 0.5, 0.7, 0.25],
                 borderColor: "rgba(3,169,243,0.9)",
                 borderWidth: "0",
                 backgroundColor: "rgba(3,169,243,0.5)"
               },
               {
-                label: "Actual cost",
-                data: [0.2, 0.1, 0.15, 0.2, 0.05, 0.05, 0.1],
-                borderColor: "rgba(171, 140, 228, 0.9)",
+                label: "Actual supply",
+                scaleLabel: "€",
+                data: [0.4, 0.1, 0.2, 0.4, 0.3, 0.8, 0.3],
+                borderColor: "rgba(251,150,120,0.9)",
                 borderWidth: "0",
-                backgroundColor: "rgba(171, 140, 228, 0.5)"
+                backgroundColor: "rgba(251,150,120,0.5)"
               }
             ]
           },
