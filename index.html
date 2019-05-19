@@ -565,13 +565,21 @@
         },
         options: {
           responsive: true,
-          events: ["click"],
+          // events: ["click"],
+          // tooltips: {
+          //   enabled: false,
+          //   mode: 'index',
+          //   position: 'nearest',
+          //   custom: customTooltips
+          // },
           tooltips: {
-            enabled: false,
             mode: 'index',
-            position: 'nearest',
-            custom: customTooltips
+            intersect: false
           },
+          hover: {
+            mode: 'nearest',
+            intersect: true
+          }
         }
       });
 
