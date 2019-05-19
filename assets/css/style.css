@@ -26,8 +26,9 @@ Googel Fonts  */
   color: white;
 }
 
-.bg-flat-color-1:hover {
+.bg-flat-color-1:hover, .bg-flat-color-1:active {
   background: #00a37a;
+  background-color: #00a37a !important;
 }
 
 .bg-flat-color-2 {
@@ -39,8 +40,9 @@ Googel Fonts  */
 .bg-flat-color-4 {
   background: #fb9678; }
 
-.bg-flat-color-4:hover {
+.bg-flat-color-4:hover, .bg-flat-color-4:active {
   background: #dd7758;
+  background-color: #dd7758 !important;
 }
 
 .bg-flat-color-5 {
