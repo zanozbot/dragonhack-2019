@@ -1,5 +1,7 @@
 # GreenGo
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 GreenGo - Save energy, save money. 
 A 24 hour winning project for Dragonhack 2019.
 
